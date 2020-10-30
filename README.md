@@ -29,14 +29,33 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+In order to build stateful class components, you should assign values to 'state' at the begining of the component declaration. Each key inside 'state' can be treated as an ordinary variable, with the use of the prefix this.state. These values can be reset by passing arguments to this.setState().
 
 2. Describe the different phases of the component lifecycle.
+First there is the mounting phase. This is where initial state is loaded, and the component first returns something that is rendered. Immediately following this we can use the compontentDidMount function to activate certain processes when the component mounts.
+
+The next phase is the update phase. Whenever state inside a react class component changes, the component will 'react' and then rerender. 
+
+The final phase of a compenent is the unmounting phase, or death of the component. This occurs when the component is removed from the screen. You can use componentWillUnmount, to make anything you want to happen right before the component unmounts.
 
 3. Demonstrate an understanding of class component lifecycle methods.
+ComponentDidMount() should be used for anything that you would like to occur immediately after the component first mounts. This is a good place for an api fetch, or gathering any other variable data you might want to set to state before the user interacts with the component.
+
+ComponentDidUpdate() can be implemented for additional actions that you want to occur everytime the component rerenders. 
+
+comonentWillUnmount() will run when immediately before the component dismounts, and is often used to clean up state or set state to some kind of storage for the next time the component is used. 
 
 4. Define stateful logic.
+Stateful logic is logic that comes with the component that deals with the state of the component. Stateful logic often comes in the form of helper functions, that at some point set state.
 
 5. Describe how to test a React component with React Testing Library.
+Using the react testing library we use the AAA method. Arrange, act, and assert.
+
+In the arrange phase we render any components relevant to the test.
+
+In the act phase, we create variables for objects in the component, and then fire events on theose objects.
+
+In the assert phase we check to see if the expected results have occured. We used the expect() function to do this.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
